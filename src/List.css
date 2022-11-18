@@ -1,0 +1,160 @@
+.Header {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  padding-top: 1vw;
+}
+
+.Wish-list {
+  margin: 0px auto;
+  width: 70%;
+  background-color: #FDFDFB;
+  font-family: Bellaboo;
+  color: #124C08;
+}
+
+.Title {
+  font-size: calc(1em + 4vw);
+  font-family: Bellaboo;
+  color: #124C08;
+  margin: 0;
+}
+
+.Explicacion {
+  font-size: calc(1em + 3vw);
+  font-family: Better-together;
+  color: #8E7F54;
+  margin: 0;
+}
+
+h3 {
+  text-align: center;
+}
+
+.List {
+  background-color: #FDFDFB;
+  text-align: center;
+  font-size: calc(1em + 2vw);
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.List-title {
+  font-size: calc(1em + 2vw);
+  text-align: left;
+  font-family: Bellaboo;
+  margin: 0;
+  color: #124C08;
+}
+
+.nombre-invitado {
+  font-size: calc(1em + 2vw);
+  text-align: left;
+  font-family: Better-together;
+  margin: 0;
+  color: #8E7F54;
+}
+
+.input-invitado {
+  height: 9%;
+  margin: 1%;
+}
+.checkbox-list {
+  height: 300px;
+  display: inline-block;
+  width: 90%;
+  text-align: center;
+  color: #8E7F54;
+  padding-bottom: 10%;
+}
+
+.ListIntems {
+  margin-top: 0.3rem;
+  vertical-align: text-bottom;
+}
+
+.ListIntems-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ListIntems-list li {
+  margin-bottom: 0.5rem;
+}
+
+.ListIntems-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ListIntems-list li:last-child {
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.ListIntems-list-item label {
+  vertical-align: text-bottom;
+  margin-left: 0.2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .ListIntems-list,
+  .total {
+    width: 90%;
+  }
+}
+
+.button-div {
+  margin: 1;
+}
+/* CSS */
+.button-6 {
+  align-items: right;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Bellaboo;
+  font-size: calc(1em + 0.5vw);
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: #124C08;
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: #124C08;
+  transform: translateY(0);
+}

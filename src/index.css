@@ -5,9 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(../src/img/safari.webp);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'Bellaboo';
+  src: local('Bellaboo'), url(./fonts/bellaboo-1.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Better-together';
+  src: local('Better-together'), url(./fonts/Better\ Together\ Condensed.ttf) format('truetype');
 }
