@@ -29,6 +29,7 @@ export default function WishList() {
   }
 
   const [option, setOptions] = useState(true);
+  const [fin, setFin] = useState(true);
   const [checkedState, setCheckedState] = useState(
     new Array(ListItems.length).fill(false)
   );
@@ -49,22 +50,23 @@ export default function WishList() {
 
   const handleButtonOnChange = () => {
     setOptions(!option);
-    console.log(checkedState);
+  }
+
+  const handleFin= () => {
+    setFin(!fin);
   }
 
   const handleFinalizar = () => {
     const newList = ListItems
-    console.log(datos.name);
     newList.forEach(item => 
-      item.checked ? item.invitado = datos.name : ""
+      item.checked && item.invitado.length === 0? item.invitado = datos.name : ""
     );
-    console.log(newList);
     const db = getDatabase();
     newList.forEach((item, index) =>
     {
       update(ref(db, 'items/' + index), item)
      .then(() => {
-       console.log('Data saved successfully!');
+       setFin(false);
      })
      .catch((error) => {
        console.log('The write failed...');
@@ -88,6 +90,7 @@ export default function WishList() {
 
   return (
     <div className="Header">
+      { fin ?
       <div className='Wish-list'>
         <div>
           <p className='Title'>Baby Shower Wish List</p>
@@ -100,8 +103,9 @@ export default function WishList() {
             <div className="checkbox-list">
               <p className='List-title'>Opciones</p>
               <ul className="ListItems-list">
-                {ListItems.map(({ name, checked }, index) => {
+                {ListItems.map(({ name, checked, invitado }, index) => {
                   return (
+                    invitado.length === 0 ? 
                     <li key={index}>
                       <div className="ListItems-list-item">
                         <div className="left-section">
@@ -112,10 +116,10 @@ export default function WishList() {
                             checked={checkedState[index]}
                             onChange={() => handleOnChange(index)}
                           />
-                          <label htmlFor={`custom-checkbox-${index}`}>{name}</label>
+                          <label htmlFor={`custom-checkbox-${index, invitado.length}`}>{name}</label>
                         </div>
                       </div>
-                    </li>
+                    </li> : null
                   );
                 })}
                 <li>
@@ -127,8 +131,8 @@ export default function WishList() {
             <div className="checkbox-list">
               <p className='List-title'>Seleccion</p>
               <ul className="ListItems-list">
-                {ListItems.map(({ name, checked }, index) => {
-                  return checked ? (
+                {ListItems.map(({ name, checked, invitado }, index) => {
+                  return checked && invitado.length === 0? (
                     <li key={index}>
                       <div className="ListItems-list-item">
                         <div className="left-section">
@@ -154,6 +158,15 @@ export default function WishList() {
           }
         </div>
       </div>
+      :
+      <div className='Wish-list'>
+      <div>
+          <p className='Title'>Gracias</p>
+          <p className='Explicacion'>
+            Te esperamos
+          </p>
+        </div>
+      </div> }
     </div>
   );
 }
